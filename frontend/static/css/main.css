@@ -1,0 +1,3 @@
+body { margin:0; }
+#wrapper { width: 940px; left: 50%; margin-left: -470px; position: absolute; min-height: 100%; text-align: center; display: table;}
+#inner {display: table-cell; vertical-align: middle; }

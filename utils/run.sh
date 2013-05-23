@@ -1,0 +1,1 @@
+dev_appserver.py . --dev_appserver_log_level debug --port 7777

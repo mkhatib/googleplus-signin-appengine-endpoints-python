@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Barebone Google+ Sign In with AppEngine Cloud Endpoints!</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" ></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="inner">
+        <div id="signin-button">
+          <button class="g-signin"
+              data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email"
+              data-requestvisibleactions="http://schemas.google.com/AddActivity"
+              data-clientId="YOUR_GOOGLE_API_CLIENT_ID"
+              data-callback="loginFinishedCallback"
+              data-cookiepolicy="single_host_origin"
+              data-width="wide"
+              data-height="tall">
+          </button>
+        </div>
+        <h1 id="greeting" style="display:none;"></h1>
+        <div id="info" style="display:none;">
+          <img id="avatar"/>
+          <a id="name"></a>
+          <div id="email"></div>
+          <img id="cover"/>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    <script src="/static/js/main.js"></script>
+    <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script');
+      po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://plus.google.com/js/client:plusone.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(po, s);
+    })();
+    </script>
+  </body>
+</html>

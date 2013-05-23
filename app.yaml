@@ -1,0 +1,29 @@
+application: your-app-id
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: frontend/static/images/favicon.ico
+  upload: favicon\.ico
+
+- url: /
+  static_files: frontend/templates/index.html
+  upload: app\.html
+
+- url: /static
+  static_dir: frontend/static/
+
+- url: /templates
+  static_dir: frontend/templates/
+
+- url: /_ah/spi/.*
+  script: backend.api.app
+
+error_handlers:
+  - file: frontend/templates/default_error.html
+
+env_variables:
+  GOOGLE_CLIENT_ID: 'YOUR_GOOGLE_API_CLIENT_ID'
